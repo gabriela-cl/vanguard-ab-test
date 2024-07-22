@@ -1,0 +1,760 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0613.1930                               -->
+<workbook original-version='18.1' source-build='2024.2.0 (20242.24.0613.1930)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='merged_exp_demo' inline='true' name='federated.1l2t8jk1cronit1esd8gg0gu77wp' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='merged_exp_demo' name='textscan.0cri1c11kpat6c1gsaiev17aq3to'>
+            <connection class='textscan' directory='/Users/gabrielaclementedeoliveira/Documents/GitHub/vanguard-ab-test/notebooks/Gabi' filename='merged_exp_demo.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='merged_exp_web' name='textscan.041bscn02csrh31bz15981uk3nwp'>
+            <connection class='textscan' directory='/Users/gabrielaclementedeoliveira/Documents/GitHub/vanguard-ab-test/notebooks/Gabi' filename='merged_exp_web.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0cri1c11kpat6c1gsaiev17aq3to' name='merged_exp_demo.csv' table='[merged_exp_demo#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='client_id' ordinal='0' />
+            <column datatype='real' name='clnt_tenure_yr' ordinal='1' />
+            <column datatype='real' name='clnt_tenure_mnth' ordinal='2' />
+            <column datatype='real' name='clnt_age' ordinal='3' />
+            <column datatype='string' name='gendr' ordinal='4' />
+            <column datatype='real' name='num_accts' ordinal='5' />
+            <column datatype='real' name='bal' ordinal='6' />
+            <column datatype='real' name='calls_6_mnth' ordinal='7' />
+            <column datatype='real' name='logons_6_mnth' ordinal='8' />
+            <column datatype='string' name='Variation' ordinal='9' />
+            <column datatype='string' name='Clients Tenure (years)' ordinal='10' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.0cri1c11kpat6c1gsaiev17aq3to' name='merged_exp_demo.csv' table='[merged_exp_demo#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='client_id' ordinal='0' />
+              <column datatype='real' name='clnt_tenure_yr' ordinal='1' />
+              <column datatype='real' name='clnt_tenure_mnth' ordinal='2' />
+              <column datatype='real' name='clnt_age' ordinal='3' />
+              <column datatype='string' name='gendr' ordinal='4' />
+              <column datatype='real' name='num_accts' ordinal='5' />
+              <column datatype='real' name='bal' ordinal='6' />
+              <column datatype='real' name='calls_6_mnth' ordinal='7' />
+              <column datatype='real' name='logons_6_mnth' ordinal='8' />
+              <column datatype='string' name='Variation' ordinal='9' />
+              <column datatype='string' name='Clients Tenure (years)' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='textscan.041bscn02csrh31bz15981uk3nwp' name='merged_exp_web.csv' table='[merged_exp_web#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='client_id' ordinal='0' />
+              <column datatype='string' name='visitor_id' ordinal='1' />
+              <column datatype='string' name='visit_id' ordinal='2' />
+              <column datatype='string' name='process_step' ordinal='3' />
+              <column datatype='datetime' name='date_time' ordinal='4' />
+              <column datatype='string' name='Variation' ordinal='5' />
+              <column datatype='integer' name='step_num' ordinal='6' />
+              <column datatype='real' name='prev_step_num' ordinal='7' />
+              <column datatype='boolean' name='backward_step' ordinal='8' />
+              <column datatype='integer' name='time_diff' ordinal='9' />
+              <column datatype='boolean' name='completion' ordinal='10' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Clients Tenure (years)]' value='[merged_exp_demo.csv].[Clients Tenure (years)]' />
+          <map key='[Variation (merged_exp_web.csv)]' value='[merged_exp_web.csv].[Variation]' />
+          <map key='[Variation]' value='[merged_exp_demo.csv].[Variation]' />
+          <map key='[backward_step]' value='[merged_exp_web.csv].[backward_step]' />
+          <map key='[bal]' value='[merged_exp_demo.csv].[bal]' />
+          <map key='[calls_6_mnth]' value='[merged_exp_demo.csv].[calls_6_mnth]' />
+          <map key='[client_id (merged_exp_web.csv)]' value='[merged_exp_web.csv].[client_id]' />
+          <map key='[client_id]' value='[merged_exp_demo.csv].[client_id]' />
+          <map key='[clnt_age]' value='[merged_exp_demo.csv].[clnt_age]' />
+          <map key='[clnt_tenure_mnth]' value='[merged_exp_demo.csv].[clnt_tenure_mnth]' />
+          <map key='[clnt_tenure_yr]' value='[merged_exp_demo.csv].[clnt_tenure_yr]' />
+          <map key='[completion]' value='[merged_exp_web.csv].[completion]' />
+          <map key='[date_time]' value='[merged_exp_web.csv].[date_time]' />
+          <map key='[gendr]' value='[merged_exp_demo.csv].[gendr]' />
+          <map key='[logons_6_mnth]' value='[merged_exp_demo.csv].[logons_6_mnth]' />
+          <map key='[num_accts]' value='[merged_exp_demo.csv].[num_accts]' />
+          <map key='[prev_step_num]' value='[merged_exp_web.csv].[prev_step_num]' />
+          <map key='[process_step]' value='[merged_exp_web.csv].[process_step]' />
+          <map key='[step_num]' value='[merged_exp_web.csv].[step_num]' />
+          <map key='[time_diff]' value='[merged_exp_web.csv].[time_diff]' />
+          <map key='[visit_id]' value='[merged_exp_web.csv].[visit_id]' />
+          <map key='[visitor_id]' value='[merged_exp_web.csv].[visitor_id]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clnt_tenure_yr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[clnt_tenure_yr]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>clnt_tenure_yr</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clnt_tenure_mnth</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[clnt_tenure_mnth]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>clnt_tenure_mnth</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clnt_age</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[clnt_age]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>clnt_age</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gendr</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gendr]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>gendr</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>num_accts</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[num_accts]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>num_accts</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bal</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[bal]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>bal</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calls_6_mnth</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[calls_6_mnth]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>calls_6_mnth</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>logons_6_mnth</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[logons_6_mnth]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>logons_6_mnth</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Clients Tenure (years)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Clients Tenure (years)]</local-name>
+            <parent-name>[merged_exp_demo.csv]</parent-name>
+            <remote-alias>Clients Tenure (years)</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id (merged_exp_web.csv)]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>visitor_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[visitor_id]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>visitor_id</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>visit_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[visit_id]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>visit_id</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>process_step</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[process_step]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>process_step</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_time</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[date_time]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>date_time</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation (merged_exp_web.csv)]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>step_num</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[step_num]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>step_num</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>prev_step_num</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[prev_step_num]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>prev_step_num</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>backward_step</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[backward_step]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>backward_step</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_diff</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[time_diff]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>time_diff</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>completion</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[completion]</local-name>
+            <parent-name>[merged_exp_web.csv]</parent-name>
+            <remote-alias>completion</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Variation (merged exp web.csv)' datatype='string' name='[Variation (merged_exp_web.csv)]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='merged_exp_demo.csv' datatype='table' name='[__tableau_internal_object_id__].[merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='merged_exp_web.csv' datatype='table' name='[__tableau_internal_object_id__].[merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690]' role='measure' type='quantitative' />
+      <column caption='Backward Step' datatype='boolean' name='[backward_step]' role='dimension' type='nominal' />
+      <column caption='Bal' datatype='real' name='[bal]' role='measure' type='quantitative' />
+      <column caption='Calls 6 Mnth' datatype='real' name='[calls_6_mnth]' role='measure' type='quantitative' />
+      <column caption='Client Id (Merged Exp Web.Csv)' datatype='integer' name='[client_id (merged_exp_web.csv)]' role='dimension' type='ordinal' />
+      <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+      <column caption='Clnt Age' datatype='real' name='[clnt_age]' role='measure' type='quantitative' />
+      <column caption='Clnt Tenure Mnth' datatype='real' name='[clnt_tenure_mnth]' role='measure' type='quantitative' />
+      <column caption='Clnt Tenure Yr' datatype='real' name='[clnt_tenure_yr]' role='dimension' type='quantitative' />
+      <column caption='Completion' datatype='boolean' name='[completion]' role='dimension' type='nominal' />
+      <column caption='Date Time' datatype='datetime' name='[date_time]' role='dimension' type='ordinal' />
+      <column caption='Gendr' datatype='string' name='[gendr]' role='dimension' type='nominal' />
+      <column caption='Logons 6 Mnth' datatype='real' name='[logons_6_mnth]' role='measure' type='quantitative' />
+      <column caption='Num Accts' datatype='real' name='[num_accts]' role='measure' type='quantitative' />
+      <column caption='Prev Step Num' datatype='real' name='[prev_step_num]' role='dimension' type='ordinal' />
+      <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal' />
+      <column caption='Step Num' datatype='integer' name='[step_num]' role='dimension' type='ordinal' />
+      <column caption='Time Diff' datatype='integer' name='[time_diff]' role='measure' type='quantitative' />
+      <column caption='Visit Id' datatype='string' name='[visit_id]' role='dimension' type='nominal' />
+      <column caption='Visitor Id' datatype='string' name='[visitor_id]' role='dimension' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='1' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='merged_exp_demo.csv' id='merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E'>
+            <properties context=''>
+              <relation connection='textscan.0cri1c11kpat6c1gsaiev17aq3to' name='merged_exp_demo.csv' table='[merged_exp_demo#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='real' name='clnt_tenure_yr' ordinal='1' />
+                  <column datatype='real' name='clnt_tenure_mnth' ordinal='2' />
+                  <column datatype='real' name='clnt_age' ordinal='3' />
+                  <column datatype='string' name='gendr' ordinal='4' />
+                  <column datatype='real' name='num_accts' ordinal='5' />
+                  <column datatype='real' name='bal' ordinal='6' />
+                  <column datatype='real' name='calls_6_mnth' ordinal='7' />
+                  <column datatype='real' name='logons_6_mnth' ordinal='8' />
+                  <column datatype='string' name='Variation' ordinal='9' />
+                  <column datatype='string' name='Clients Tenure (years)' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='merged_exp_web.csv' id='merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690'>
+            <properties context=''>
+              <relation connection='textscan.041bscn02csrh31bz15981uk3nwp' name='merged_exp_web.csv' table='[merged_exp_web#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='string' name='visitor_id' ordinal='1' />
+                  <column datatype='string' name='visit_id' ordinal='2' />
+                  <column datatype='string' name='process_step' ordinal='3' />
+                  <column datatype='datetime' name='date_time' ordinal='4' />
+                  <column datatype='string' name='Variation' ordinal='5' />
+                  <column datatype='integer' name='step_num' ordinal='6' />
+                  <column datatype='real' name='prev_step_num' ordinal='7' />
+                  <column datatype='boolean' name='backward_step' ordinal='8' />
+                  <column datatype='integer' name='time_diff' ordinal='9' />
+                  <column datatype='boolean' name='completion' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[client_id]' />
+              <expression op='[client_id (merged_exp_web.csv)]' />
+            </expression>
+            <first-end-point object-id='merged_exp_demo.csv_31C278FD16FF44C89DBF9454E91AD56E' />
+            <second-end-point object-id='merged_exp_web.csv_6A57397676984D4D8BE4B0A2D08D9690' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='time_spent' inline='true' name='federated.0z8bm6d1r8ryza10gcntg1rm1u28' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='time_spent' name='textscan.10v64fm18o8f6n1at2jes10yp08n'>
+            <connection class='textscan' directory='/Users/gabrielaclementedeoliveira/Documents/GitHub/vanguard-ab-test/notebooks/Gabi' filename='time_spent.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.10v64fm18o8f6n1at2jes10yp08n' name='time_spent.csv' table='[time_spent#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Variation' ordinal='0' />
+            <column datatype='string' name='process_step' ordinal='1' />
+            <column datatype='string' name='time_diff' ordinal='2' />
+            <column datatype='integer' name='total_seconds' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.10v64fm18o8f6n1at2jes10yp08n' name='time_spent.csv' table='[time_spent#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Variation' ordinal='0' />
+            <column datatype='string' name='process_step' ordinal='1' />
+            <column datatype='string' name='time_diff' ordinal='2' />
+            <column datatype='integer' name='total_seconds' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[time_spent.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation]</local-name>
+            <parent-name>[time_spent.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>process_step</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[process_step]</local-name>
+            <parent-name>[time_spent.csv]</parent-name>
+            <remote-alias>process_step</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_diff</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[time_diff]</local-name>
+            <parent-name>[time_spent.csv]</parent-name>
+            <remote-alias>time_diff</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_seconds</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_seconds]</local-name>
+            <parent-name>[time_spent.csv]</parent-name>
+            <remote-alias>total_seconds</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Variation1' datatype='string' name='[Variation]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='time_spent.csv' datatype='table' name='[__tableau_internal_object_id__].[time_spent.csv_AAE20CC02DD04068A4B1500CE49BBFAA]' role='measure' type='quantitative' />
+      <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal' />
+      <column caption='Time Diff' datatype='string' name='[time_diff]' role='dimension' type='nominal' />
+      <column caption='Total Seconds' datatype='integer' name='[total_seconds]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='time_spent.csv' id='time_spent.csv_AAE20CC02DD04068A4B1500CE49BBFAA'>
+            <properties context=''>
+              <relation connection='textscan.10v64fm18o8f6n1at2jes10yp08n' name='time_spent.csv' table='[time_spent#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='Variation' ordinal='0' />
+                  <column datatype='string' name='process_step' ordinal='1' />
+                  <column datatype='string' name='time_diff' ordinal='2' />
+                  <column datatype='integer' name='total_seconds' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Time spent per step</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='time_spent' name='federated.0z8bm6d1r8ryza10gcntg1rm1u28' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0z8bm6d1r8ryza10gcntg1rm1u28'>
+            <column caption='Variation1' datatype='string' name='[Variation]' role='dimension' type='nominal' />
+            <column-instance column='[total_seconds]' derivation='Avg' name='[avg:total_seconds:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[process_step]' derivation='None' name='[none:process_step:nk]' pivot='key' type='nominal' />
+            <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal' />
+            <column caption='Total Seconds' datatype='integer' name='[total_seconds]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.0z8bm6d1r8ryza10gcntg1rm1u28].[none:process_step:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;start&quot;</bucket>
+              <bucket>&quot;step_1&quot;</bucket>
+              <bucket>&quot;step_2&quot;</bucket>
+              <bucket>&quot;step_3&quot;</bucket>
+              <bucket>&quot;confirm&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0z8bm6d1r8ryza10gcntg1rm1u28].[none:Variation:nk]' />
+              <text column='[federated.0z8bm6d1r8ryza10gcntg1rm1u28].[avg:total_seconds:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0z8bm6d1r8ryza10gcntg1rm1u28].[avg:total_seconds:qk]</rows>
+        <cols>([federated.0z8bm6d1r8ryza10gcntg1rm1u28].[none:process_step:nk] / [federated.0z8bm6d1r8ryza10gcntg1rm1u28].[none:Variation:nk])</cols>
+      </table>
+      <simple-id uuid='{8DCD2667-CBD3-4A31-A444-E248EE44CFBA}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{7BA11760-65D1-4737-A14C-91200E2EA04D}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='51'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0z8bm6d1r8ryza10gcntg1rm1u28].[none:Variation:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4C520F05-D797-4CAB-944E-844E4F4E4EC1}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CA33B390-D56D-48BB-845D-B1D4CFD45471}' />
+    </window>
+  </windows>
+</workbook>
