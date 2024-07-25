@@ -1,0 +1,11 @@
+Variation,process_step,time_diff,total_seconds
+Control,confirm,00:02:08,128
+Control,start,00:02:33,153
+Control,step_1,00:00:42,42
+Control,step_2,00:00:38,38
+Control,step_3,00:01:32,92
+Test,confirm,00:02:08,128
+Test,start,00:02:28,148
+Test,step_1,00:00:37,37
+Test,step_2,00:00:48,48
+Test,step_3,00:01:36,96
