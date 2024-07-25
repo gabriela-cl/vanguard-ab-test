@@ -1,7 +1,7 @@
 # Vanguard A/B Testing Project
 
 **Authors:**  
-- Gabi  
+- Gabriela  
 - Davide
 
 ## Project Overview
