@@ -37,5 +37,8 @@ Vanguard conducted an A/B test to evaluate the impact of a redesigned digital in
 - Employed statistical tests for hypothesis testing.
 - Leveraged Tableau for data visualization to create insightful and interactive visualizations.
 
+- Link to the presentation: https://docs.google.com/presentation/d/1L_c6pVa9Wle7i67XVyp144lOtRolMvfj/edit?usp=sharing&ouid=111310972434121764252&rtpof=true&sd=true
+- Link to Kanban board: https://trello.com/b/QzCXcZtP/vanguard-ab-test
+
 ## Conclusion
 This project provided valuable insights into the effectiveness of Vanguard's digital experiment. By analyzing key metrics and conducting hypothesis testing, we gained a deeper understanding of the impact of the redesigned interface on user behavior.
